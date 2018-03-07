@@ -1,9 +1,6 @@
 function FindProxyForURL(url, host) {
- if ((isPlainHostName(host) ||
- dnsDomainIs(host, "shimane-u.ac.jp")) &&
- !! localHostOrDomainIs(host, "www.shimane-u.ac.jp") &&
- !! localHostOrDoaminIs(host, "www.cis.shimane-u.ac.jp"))
- return "DIRECT";
+ if ((isPlainHostName(host) || localHostOrDoaminIs(host, "www.cis.shimane-u.ac.jp"))
+    return "10.10.10.100:8080";
  else
- return "127.0.0.1:8888";
+    return "DIRECT";
 }
